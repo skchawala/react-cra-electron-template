@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+## react(CRA) + electron + typescript + prettier + eslint 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

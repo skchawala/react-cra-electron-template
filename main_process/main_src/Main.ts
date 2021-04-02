@@ -2,6 +2,7 @@ import { BrowserWindow } from 'electron';
 import path from 'path';
 import isDev from 'electron-is-dev';
 
+
 export default class Main {
     static mainWindow: Electron.BrowserWindow | null;
     static application: Electron.App;

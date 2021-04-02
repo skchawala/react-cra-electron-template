@@ -1,0 +1,18 @@
+{
+    "extends": ["eslint:recommended", "plugin:react/recommended", "eslint-config-prettier"],
+    "rules": {
+        "no-debugger": "off",
+        "no-console": 0,
+        "ordered-imports": 0,
+        "object-literal-sort-keys": 0,
+        "jsx-no-lambda": 0,
+        "member-ordering": 0,
+        "member-access": 0,
+        "jsx-boolean-value": 0,
+        "react/react-in-jsx-scope": "off"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    }
+}

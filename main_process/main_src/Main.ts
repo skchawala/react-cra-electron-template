@@ -1,6 +1,6 @@
 import { BrowserWindow } from 'electron';
-import path from 'path'
-import isDev from "electron-is-dev"
+import path from 'path';
+import isDev from 'electron-is-dev';
 
 export default class Main {
     static mainWindow: Electron.BrowserWindow | null;
@@ -17,13 +17,12 @@ export default class Main {
         // Dereference the window object.
         Main.mainWindow = null;
     }
-    private static onActivate(){
+    private static onActivate() {
         // On OS X it's common to re-create a window in the app when the
         // dock icon is clicked and there are no other windows open.
-        if ( BrowserWindow.getAllWindows().length === 0){
-            Main.onReady()
+        if (BrowserWindow.getAllWindows().length === 0) {
+            Main.onReady();
         }
-
     }
     private static onReady() {
         Main.mainWindow = new Main.BrowserWindow({
@@ -31,20 +30,19 @@ export default class Main {
             height: 680,
             webPreferences: {
                 preload: path.join(__dirname, './preload'),
-                nodeIntegration:true,
-                contextIsolation: false
-            }});
-
+                nodeIntegration: true,
+                contextIsolation: false,
+            },
+        });
 
         Main.mainWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../index.html')}`);
 
         Main.mainWindow.on('closed', Main.onClose);
 
         // Open DevTools In Development
-        if(isDev){
-            Main.mainWindow.webContents.openDevTools()
+        if (isDev) {
+            Main.mainWindow.webContents.openDevTools();
         }
-
     }
 
     static main(app: Electron.App, browserWindow: typeof BrowserWindow) {
@@ -56,6 +54,6 @@ export default class Main {
         Main.application = app;
         Main.application.on('window-all-closed', Main.onWindowAllClosed);
         Main.application.on('ready', Main.onReady);
-        Main.application.on('activate',Main.onActivate)
+        Main.application.on('activate', Main.onActivate);
     }
 }

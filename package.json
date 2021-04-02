@@ -1,65 +1,69 @@
 {
-  "name": "plant-automation",
-  "version": "0.1.0",
-  "private": true,
-  "main": "public/electron.js",
-  "dependencies": {
-    "electron-is-dev": "^2.0.0",
-    "electron-squirrel-startup": "^1.0.0"
-  },
-  "homepage": "./",
-  "build": {
-    "appId": "com.example.electron-cra",
-    "files": [
-      "build/**/*",
-      "node_modules/**/*"
-    ],
-    "directories": {
-      "buildResources": "assets"
+    "name": "plant-automation",
+    "version": "0.1.0",
+    "private": true,
+    "main": "public/electron.js",
+    "dependencies": {
+        "electron-is-dev": "^2.0.0",
+        "electron-squirrel-startup": "^1.0.0"
+    },
+    "homepage": "./",
+    "build": {
+        "appId": "com.example.electron-cra",
+        "files": [
+            "build/**/*",
+            "node_modules/**/*"
+        ],
+        "directories": {
+            "buildResources": "assets"
+        }
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "compile-electron": "tsc --project main_process/tsconfig.json",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "electron-dev": "concurrently \"BROWSER=none npm start\"  \"tsc --project main_process/tsconfig.json -w\"  \"wait-on http://localhost:3000  && nodemon --exec electron .\"",
+        "preelectron-pack": "npm run compile-electron && npm run build",
+        "electron-pack": "electron-builder"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@testing-library/jest-dom": "^5.11.10",
+        "@testing-library/react": "^11.2.6",
+        "@testing-library/user-event": "^12.8.3",
+        "@typescript-eslint/eslint-plugin": "^4.20.0",
+        "@typescript-eslint/parser": "^4.20.0",
+        "concurrently": "^6.0.0",
+        "electron": "^12.0.2",
+        "electron-builder": "^22.10.5",
+        "eslint-config-prettier": "^8.1.0",
+        "eslint-plugin-react": "^7.23.1",
+        "husky": "^6.0.0",
+        "nodemon": "^2.0.7",
+        "prettier": "2.2.1",
+        "pretty-quick": "^3.1.0",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-scripts": "4.0.3",
+        "wait-on": "^5.3.0",
+        "web-vitals": "^1.1.1"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged --ignore-path=.prettierignore"
+        }
     }
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "compile-electron": "tsc --project main_process/tsconfig.json",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "electron-dev": "concurrently \"BROWSER=none npm start\"  \"tsc --project main_process/tsconfig.json -w\"  \"wait-on http://localhost:3000  && nodemon --exec electron .\"",
-    "preelectron-pack": "npm run compile-electron && npm run build",
-    "electron-pack": "electron-builder"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@testing-library/jest-dom": "^5.11.10",
-    "@testing-library/react": "^11.2.6",
-    "@testing-library/user-event": "^12.8.3",
-    "@typescript-eslint/eslint-plugin": "^4.20.0",
-    "@typescript-eslint/parser": "^4.20.0",
-    "concurrently": "^6.0.0",
-    "electron": "^12.0.2",
-    "electron-builder": "^22.10.5",
-    "nodemon": "^2.0.7",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "wait-on": "^5.3.0",
-    "web-vitals": "^1.1.1"
-  }
 }

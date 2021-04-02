@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import './renderer_process/say_hello'
 
 function App() {
   return (

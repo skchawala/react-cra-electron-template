@@ -18,6 +18,7 @@ export default class Main {
         // Dereference the window object.
         Main.mainWindow = null;
     }
+
     
     private static onActivate() {
         // On OS X it's common to re-create a window in the app when the

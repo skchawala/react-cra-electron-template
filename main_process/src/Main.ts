@@ -2,7 +2,6 @@ import { BrowserWindow } from 'electron';
 import path from 'path';
 import isDev from 'electron-is-dev';
 
-
 export default class Main {
     static mainWindow: Electron.BrowserWindow | null;
     static application: Electron.App;
@@ -19,7 +18,6 @@ export default class Main {
         Main.mainWindow = null;
     }
 
-    
     private static onActivate() {
         // On OS X it's common to re-create a window in the app when the
         // dock icon is clicked and there are no other windows open.

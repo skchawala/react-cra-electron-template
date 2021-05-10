@@ -1,4 +1,4 @@
-# react(CRA) + electron + typescript + prettier + eslint 
+# template:react(CRA) + electron + typescript + prettier + eslint 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

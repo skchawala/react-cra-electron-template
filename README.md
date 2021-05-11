@@ -15,7 +15,7 @@
 
 ### `npm test`
 
-  Builds the app for production to the `build` folder.\
+  Builds the app for production.
 
 ## `npm run electron-pack`
   Your app is ready to be deployed!
